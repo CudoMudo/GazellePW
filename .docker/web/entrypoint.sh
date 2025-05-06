@@ -26,11 +26,11 @@ while ! mysql -h mysql -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" -e "show databases;"
     fi;
 done
 
-echo "Run migrations..."
-if ! FKEY_MY_DATABASE=1 LOCK_MY_DATABASE=1 /var/www/vendor/bin/phinx migrate; then
-    echo "PHINX FAILED TO RUN MIGRATIONS"
-    exit 1
-fi
+#echo "Run migrations..."
+#if ! FKEY_MY_DATABASE=1 LOCK_MY_DATABASE=1 /var/www/vendor/bin/phinx migrate; then
+#    echo "PHINX FAILED TO RUN MIGRATIONS"
+#    exit 1
+#fi
 
 if [ ! -f /etc/php/7.4/cli/conf.d/99-boris.ini ]; then
     echo "Initialize Boris..."
